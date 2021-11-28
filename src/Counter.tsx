@@ -1,26 +1,32 @@
 import { useState } from 'react';
 import './Counter.css';
 
-const Greeting = (function () {
-    const state = {
-        count: 0,
-    };
-    return function () {
-        const [, setState] = useState(0);
-        function forceUpdate() {
-            setState(Math.random());
-        }
-        return (
-            <h1 className="no-select"
-                onClick={() => {
-                    state.count++;
-                    forceUpdate();
-                }}
-            >
-                Count: {state.count}
-            </h1>
-        );
-    };
-})();
+const state = {
+    count: 0,
+};
 
-export default Greeting;
+export default function Greeting() {
+
+    const [, setState] = useState(0);
+
+    /**
+     * Trigger an update.
+     * The random number is just a way to make sure React's state changes.
+     * The actual state is stored in the closure (module).
+     */
+    function forceUpdate() {
+        setState(Math.random());
+    }
+    
+    return (
+        <h1 className="no-select"
+            onClick={() => {
+                state.count++;
+                forceUpdate();
+            } }
+        >
+            Count: {state.count}
+        </h1>
+    );
+}
+
