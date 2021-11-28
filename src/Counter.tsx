@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import './Counter.css';
 
 const Greeting = (function () {
     const state = {
-        on: true,
+        count: 0,
     };
     return function () {
         const [, setState] = useState(0);
@@ -10,13 +11,13 @@ const Greeting = (function () {
             setState(Math.random());
         }
         return (
-            <h1
+            <h1 className="no-select"
                 onClick={() => {
-                    state.on = !state.on;
+                    state.count++;
                     forceUpdate();
                 }}
             >
-                {state.on ? 'Hello!' : 'Goodbye!'}
+                Count: {state.count}
             </h1>
         );
     };
