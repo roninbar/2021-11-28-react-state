@@ -1,5 +1,5 @@
 import React from 'react';
-import Greeting from './Counter';
+import Counter from './Counter';
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,8 +8,8 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <Greeting />
-                <Greeting />
+                <Counter />
+                <Counter />
                 <p>
                     Edit <code>src/App.tsx</code> and save to reload.
                 </p>

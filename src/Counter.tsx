@@ -5,7 +5,7 @@ const state = {
     count: 0,
 };
 
-export default function Greeting() {
+export default function Counter() {
 
     const [, setState] = useState(0);
 
